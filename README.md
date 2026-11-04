@@ -13,10 +13,6 @@ Starter code © MIT PDOS; my solutions are on the lab branches below.
 | Networking | [net](https://github.com/pjflukky/xv6-labs/tree/net) | NIC driver | ⬜ |
 | Locks | [lock](https://github.com/pjflukky/xv6-labs/tree/lock) | contention, allocators | ⬜ |
 
-## Notes
-### util
-- sleep: ...
-- what was hard / what I learned: ...
 
 ## Running
 git clone https://github.com/pjflukky/xv6-labs
