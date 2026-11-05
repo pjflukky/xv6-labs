@@ -69,7 +69,7 @@ memdump(char *fmt, char *data, int len)
 
       case 'i':
         if(len < sizeof(int)){
-          fprintf(2, "memdump: not enough data for i\n");
+          fprintf(2, "memdump: not enough data for 'i'\n");
           return;
         }
         fprintf(1, "%d\n", *(int *)data);  
@@ -79,7 +79,7 @@ memdump(char *fmt, char *data, int len)
 
       case 'p':
         if(len < sizeof(long)){
-          fprintf(2, "memdump: not enough data for p\n");
+          fprintf(2, "memdump: not enough data for 'p'\n");
           return;
         }
         fprintf(1, "%lx\n", *(long *)data);  
@@ -89,7 +89,7 @@ memdump(char *fmt, char *data, int len)
 
       case 'h':
         if(len < sizeof(short)){
-          fprintf(2, "memdump: not enough data for h\n");
+          fprintf(2, "memdump: not enough data for 'h'\n");
           return;
         }
         fprintf(1, "%d\n", *(short *)data);  
@@ -99,12 +99,32 @@ memdump(char *fmt, char *data, int len)
         
       case 'c':
         if(len < sizeof(char)){
-          fprintf(2, "memdump: not enough data for c\n");
+          fprintf(2, "memdump: not enough data for 'c'\n");
           return;
         }
-        fprintf(1, "%d\n", *(char *)data);  
+        fprintf(1, "%c\n", *(char *)data);  
         data = data + sizeof(char);
         len -= sizeof(char);
+        break; 
+
+      case 's':
+        if(len < sizeof(long)){
+          fprintf(2, "memdump: not enough data for 's'\n");
+          return;
+        }
+        fprintf(1, "%s\n", *(char**)data);  
+        data = data + sizeof(long);
+        len -= sizeof(long);
+        break; 
+    
+      case 'S':
+        if(len < strlen(data)){
+          fprintf(2, "memdump: not enough data for 'S'\n");
+          return;
+        }
+        fprintf(1, "%s\n", data);  
+        len -= strlen(data) + 1;
+        data = data + strlen(data) + 1;
         break; 
     }
       fmt++;
