@@ -22,13 +22,6 @@ void find(char *path, char *name){
     return;
   }
 
-  // check if path is a directory
-  if(st.type != T_DIR){
-    fprintf(2, "wrong st.type; should be a Directory");
-    close(fd);  
-    return;
-  }
-
   // check path size
   if(strlen(path) + 1 + 1 > sizeof(buf)){
     printf("find: path too long\n");
@@ -51,7 +44,7 @@ void find(char *path, char *name){
       printf("%s\n", buf);
       continue;
     }
-    else if(stat(buf, &st) >= 0){
+    else if(stat(buf, &st) >= 0 && st.type == T_DIR){
       find(buf, name);   
       continue;
     }
