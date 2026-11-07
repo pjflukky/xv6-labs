@@ -3,6 +3,8 @@
 Self-study of MIT's 6.1810 Operating System Engineering.
 Starter code © MIT PDOS; my solutions are on the lab branches below.
 
+> **Note on AI use:** Any line marked with an `// EDITED` comment, in any file, was edited with help from AI. Everything else is my own work.
+
 | Lab | Branch | Topics | Status |
 |-----|--------|--------|--------|
 | Unix utilities | [util](https://github.com/pjflukky/xv6-labs/tree/util) | fork, exec, pipes, file system | 🚧 |
