@@ -7,7 +7,7 @@ Starter code © MIT PDOS; my solutions are on the lab branches below.
 
 | Lab | Branch | Topics | Status |
 |-----|--------|--------|--------|
-| Unix utilities | [util](https://github.com/pjflukky/xv6-labs/tree/util) | fork, exec, pipes, file system | 🚧 |
+| Unix utilities | [util](https://github.com/pjflukky/xv6-labs/tree/util) | fork, exec, pipes, file system | ✅ |
 | System calls | [syscall](https://github.com/pjflukky/xv6-labs/tree/syscall) | trap path, syscall table | ⬜ |
 | Page tables | [pgtbl](https://github.com/pjflukky/xv6-labs/tree/pgtbl) | virtual memory | ⬜ |
 | Traps | [traps](https://github.com/pjflukky/xv6-labs/tree/traps) | interrupts, backtrace | ⬜ |
